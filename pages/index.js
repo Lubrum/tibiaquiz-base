@@ -23,16 +23,16 @@ export default function Home() {
 
         <Widget>
           <Widget.Header> 
-            <h1>The legend of zelda</h1>
+            <h1>Tibia</h1>
           </Widget.Header> 
           <Widget.Content>
-            <p>Lorem upsim odasda</p>
+            <p>Tibia Quiz Upcoming ;)</p>
           </Widget.Content>
         </Widget>
 
         <Widget>
             <Widget.Content>
-            <h1>The legend of zelda</h1>
+              <p>215421 5152 1212 51! </p>
             </Widget.Content>
         </Widget>
         <Footer />
