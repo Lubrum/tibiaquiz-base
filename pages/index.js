@@ -34,10 +34,6 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
 
-      <Head>
-        <title>Tibia Quiz</title>
-      </Head>
-
       <QuizContainer>
 
         <QuizLogo />
