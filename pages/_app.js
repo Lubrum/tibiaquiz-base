@@ -2,6 +2,7 @@ import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import db from '../db.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     /* New styles */
     display: flex;
     flex-direction: column;
-    font-family: 'Potta One', cursive;
+    font-family: 'Sofia', cursive;
     //font-family: 'Lato', sans-serif;
     // Deixa branco no começo
     color: ${({ theme }) => theme.colors.contrastText};
@@ -36,7 +37,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Rock+Salt&family=Sofia&display=swap" rel="stylesheet" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />

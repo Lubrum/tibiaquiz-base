@@ -22,7 +22,7 @@ const Widget = styled.div`
 
 Widget.Header = styled.header`
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 18px 32px;
     background-color: ${({ theme }) => theme.colors.primary};
@@ -32,7 +32,7 @@ Widget.Header = styled.header`
 `;
 
 Widget.Content = styled.div`
-    padding: 24px 32px 32px 32px;
+    padding: 24px 24px 24px 24px;
     & > *:first-child {
         margin-top: 0;
     }
