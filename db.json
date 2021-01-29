@@ -1,7 +1,7 @@
 {
     "bg": "https://wallpapercave.com/wp/wp7219204.jpg",
-    "title": "Quiz CSS da Alura",
-    "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+    "title": "Tibia Quiz",
+    "description": "Teste os seus conhecimentos sobre o vasto universo de Tibia e divirta-se criando o seu AluraQuiz!",
     "questions": [{
             "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
             "title": "Como fazer um seletor por id via CSS?",
