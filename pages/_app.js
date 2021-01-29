@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Tibia Quiz</title>
+        <title>{db.title}</title>
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
