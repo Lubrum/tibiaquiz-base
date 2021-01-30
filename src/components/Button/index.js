@@ -2,7 +2,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.secondary};
+  @keyframes color-change {
+    0% { background-color: ${({ theme }) => theme.colors.secondary}; }
+    50% { background-color: ${({ theme }) => theme.colors.primary}; }
+    100% { background-color: ${({ theme }) => theme.colors.secondary}; }
+  }
+  background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.contrastText};
   border-radius: ${({ theme }) => theme.borderRadius};
   border: 0;
@@ -14,13 +19,22 @@ const Button = styled.button`
   text-transform: uppercase;
   outline: 0;
   transition: .3s;
+  animation: none;
   cursor: pointer;
-  &:hover,
-  &:focus {
-    opacity: .5;
+  &:hover {
+    animation: color-change 0.5s infinite;
+    &:active {
+      animation: none;
+      background-color: #979797;
+    }
   }
+  &:active {
+      animation: none;
+      background-color: #979797;
+    }
   &:disabled {
     background-color: #979797;
+    animation: none;
     cursor: not-allowed;
   }
 `;

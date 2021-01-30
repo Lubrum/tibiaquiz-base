@@ -1,7 +1,16 @@
+/* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
 
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
+p {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
   background-color: #00000070;
   padding: 20px;
   display: flex;
