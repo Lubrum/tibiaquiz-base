@@ -4,9 +4,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 // import Form from 'react-bootstrap/Form';
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 
 // import Button from 'react-bootstrap/Button';
+import { motion } from 'framer-motion';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
@@ -16,6 +17,7 @@ import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
+import Link from '../src/components/Link';
 
 export default function Home() {
   const router = useRouter();
@@ -28,7 +30,16 @@ export default function Home() {
 
         <QuizLogo />
 
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0%' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
 
           <Widget.Header>
             {db.title}
@@ -56,86 +67,52 @@ export default function Home() {
               </Button>
 
             </form>
-            { /*
-            <Form onSubmit={function (e) {
-              e.preventDefault();
-              router.push(`/quiz?name=${name}`);
-            }}
-            >
-              <h1>
-                Teste os seus conhecimentos sobre o vasto universo de Tibia e divirta-se
-                criando o seu AluraQuiz!
-              </h1>
-
-              <br />
-
-               <Form.Group controlId="form_group_1">
-                <Form.Control
-                  style={{
-                    backgroundColor: db.theme.colors.mainBg,
-                    color: '#eeeeee',
-                  }}
-                  placeholder="Informe seu apelido"
-                  onChange={function (info) {
-                    setName(info.target.value);
-                  }}
-                />
-                <Form.Text className="text-tip-input">
-                  Vai ser bem bacana ;)
-                </Form.Text>
-              </Form.Group>
-
-              <br />
-              <Button variant="outline-danger" type="submit" block disabled={name.length === 0}>
-                Jogar {name}
-              </Button>
-
-            </Form>
-            */ }
           </Widget.Content>
         </Widget>
 
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Content>
-            <p style={{
-              fontWeight: 'bold',
-              fontSize: '20px',
-            }}
-            >
-              Quizes da galera
-            </p>
-            <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão da Alura fez: </p>
-
-            <Card style={{
-              color: '#eeeeee',
-              backgroundColor: db.theme.colors.secondaryBg,
-              margin: '10px 5px',
-            }}
-            >
-              <Card.Body>fulano/quizDaAlura</Card.Body>
-            </Card>
-
-            <Card style={{
-              color: '#eeeeee',
-              backgroundColor: db.theme.colors.secondaryBg,
-              margin: '10px 5px',
-            }}
-            >
-              <Card.Body>ciclano/quizDaAlura</Card.Body>
-            </Card>
-
-            <Card style={{
-              color: '#eeeeee',
-              backgroundColor: db.theme.colors.secondaryBg,
-              margin: '10px 5px',
-            }}
-            >
-              <Card.Body>beltrano/quizDaAlura</Card.Body>
-            </Card>
+            Quizes da galera
+            <ul>
+              {db.external.map((linkExterno) => {
+                const [projectName, githubUser] = linkExterno.replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '')
+                  .split('.');
+                return (
+                  <li key={linkExterno}>
+                    <Widget.Topic
+                      as={Link}
+                      href={`/quiz/${projectName}___${githubUser}`}
+                    >
+                      {`${githubUser}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                );
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
 
-        <Footer />
+        <Footer
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0%' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        />
 
       </QuizContainer>
       <GithubCorner projectUrl="http://github.com/Lubrum" />
