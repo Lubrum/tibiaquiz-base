@@ -26,7 +26,10 @@
         }
     ],
     "external": [
-        ""
+        "https://aluraquiz-css.omariosouto.vercel.app/",
+        "https://supernatural-quiz.pedro-murilo.vercel.app/",
+        "https://flash-quiz-next.davidlpc1.vercel.app/",
+        "https://hpquiz.lucianoweslen.dev/"
     ],
     "theme": {
         "colors": {
