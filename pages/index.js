@@ -57,7 +57,9 @@ export default function Home() {
 
               <Input
                 name="nomeDoUsuario"
-                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+                onChange={(infosDoEvento) => {
+                  setName(infosDoEvento.target.value);
+                }}
                 placeholder="Informe seu apelido"
                 value={name}
               />

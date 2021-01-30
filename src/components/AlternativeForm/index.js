@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 const AlternativesForm = styled.form`
   label {
+    @keyframes color-change-warning {
+      0% { background-color: ${({ theme }) => theme.colors.wrong}; }
+      50% { background-color: ${({ theme }) => theme.colors.primary}; }
+      100% { background-color: ${({ theme }) => theme.colors.wrong}; }
+    }
     &[data-selected="true"] {
       background-color: ${({ theme }) => theme.colors.primary};
       
@@ -9,7 +14,7 @@ const AlternativesForm = styled.form`
         background-color: ${({ theme }) => theme.colors.success};
       }
       &[data-status="ERROR"] {
-        background-color: ${({ theme }) => theme.colors.wrong};
+        animation: color-change-warning 0.5s infinite;
       }
     }
     &:focus {

@@ -4,7 +4,8 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
-
+import Head from 'next/head';
+import db from '../../../db.json';
 import AlternativesForm from '../../components/AlternativeForm';
 import Widget from '../../components/Widget';
 import QuizBackground from '../../components/QuizBackground';
@@ -13,32 +14,57 @@ import QuizLogo from '../../components/QuizLogo';
 import Button from '../../components/Button';
 import BackLinkArrow from '../../components/BackLinkArrow';
 
+const timeToChangePageMs = 500;
+
 function ResultWidget({ results }) {
+  const rightAnswers = results.filter((x) => x).length;
+  const totalAnswers = results.length;
+  const percentual = Math.round(((rightAnswers / totalAnswers) + Number.EPSILON) * 100);
+  // eslint-disable-next-line no-nested-ternary
+  const playerKnowledge = percentual > 80 ? 'um mestre de tibia, o sabichão' : percentual > 50 ? 'um jogador mediano...' : percentual > 30 ? 'um mero aprendiz h3h3' : 'n00b';
   return (
     <Widget>
       <Widget.Header>
-        Carregando...
+        <p style={{ fontSize: '20px' }}>Resultados</p>
       </Widget.Header>
+
+      <img
+        alt="Imagem do Loading"
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+        src="https://media1.tenor.com/images/0e3de95b90077d956ce520035d435c66/tenor.gif"
+      />
 
       <Widget.Content>
         Você acertou
         {' '}
-        { /* results.reduce((somatoriaAtual, resultAtual) => {
-          return resultAtual === true ? somatoriaAtual + 1 : somatoriaAtual;
-        }, 0) */ }
-        { results.filter((x) => x).length }
-        <ul>
+        { rightAnswers }
+        {' '} de um total de {' '}
+        { totalAnswers } questões.
+        <br />
+        Percentual de acertos: { `${percentual}%` }.
+        <br />
+        <br />
+        Você é { playerKnowledge }.
+        <br />
+        <br />
+        <ul key="result__final">
           {results.map((result, index) => (
-            <li key={`result__${result}`}>
+            // eslint-disable-next-line react/no-array-index-key
+            <li key={`result__${index}`}>
               #
               {index + 1}
               {' '}
-              Resultado:
+              Resultado: {' '} {' '}
               { result === true ? 'Acertou' : 'Errou' }
             </li>
           ))}
         </ul>
+        <a href="/">Tentar novamente...</a>
       </Widget.Content>
+
     </Widget>
   );
 }
@@ -50,11 +76,22 @@ function LoadingWidget() {
         Carregando...
       </Widget.Header>
 
-      <Widget.Content>
-        [Desafio do Loading]
+      <Widget.Content style={{ padding: '0px' }}>
+        <img
+          alt="Imagem do Loading"
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+          src="https://cdn.dribbble.com/users/18886/screenshots/1027635/loading.gif"
+        />
       </Widget.Content>
     </Widget>
   );
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function QuestionWidget({
@@ -64,11 +101,24 @@ function QuestionWidget({
   onSubmit,
   addResult,
 }) {
-  const [selectedAlternative, setSelectedAlternative] = React.useState();
+  const [selectedAlternative, setSelectedAlternative] = React.useState(false);
   const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
+  const [executing, setExecuting] = React.useState(false);
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
+
+  const onRealClick = async () => {
+    await sleep(10);
+    setExecuting(true);
+    try {
+      // eslint-disable-next-line no-undef
+      await sleep(timeToChangePageMs);
+    } finally {
+      setExecuting(false);
+    }
+  };
+
   return (
     <Widget>
       <Widget.Header>
@@ -82,8 +132,8 @@ function QuestionWidget({
         alt="Descrição"
         style={{
           width: '100%',
-          height: '150px',
-          objectFit: 'cover',
+          height: '300px',
+          padding: '50px',
         }}
         src={question.image}
       />
@@ -100,18 +150,20 @@ function QuestionWidget({
         <AlternativesForm onSubmit={(infosDoEvento) => {
           infosDoEvento.preventDefault();
           setIsQuestionSubmited(true);
-          setTimeout(() => {
+          const timer = setTimeout(() => {
             addResult(isCorrect);
             onSubmit();
             setIsQuestionSubmited(false);
             setSelectedAlternative(undefined);
-          }, 3 * 1000);
+          }, timeToChangePageMs);
+          return () => { clearTimeout(timer); };
         }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
             const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
             const isSelected = selectedAlternative === alternativeIndex;
+
             return (
               <Widget.Topic
                 as="label"
@@ -122,6 +174,7 @@ function QuestionWidget({
               >
                 <input
                   style={{ display: 'none' }}
+                  disabled={isQuestionSubmited}
                   id={alternativeId}
                   name={questionId}
                   onChange={() => {
@@ -134,15 +187,14 @@ function QuestionWidget({
             );
           })}
 
-          {/* <pre>
-            {JSON.stringify(question, null, 4)}
-          </pre> */}
-
-          <Button type="submit" disabled={!hasAlternativeSelected}>
+          <Button
+            type="submit"
+            disabled={!hasAlternativeSelected || executing}
+            onClick={onRealClick}
+          >
             Confirmar
           </Button>
 
-          { /* <p>selected alternative: {`${selectedAlternative}`}</p> */ }
           { isQuestionSubmited && isCorrect && <p> Voce acertou </p> }
           { isQuestionSubmited && !isCorrect && <p> Voce errou </p> }
         </AlternativesForm>
@@ -166,7 +218,6 @@ export default function QuizPage({ externalQuestions, externalBg }) {
   const question = externalQuestions[questionIndex];
 
   function addResult(result) {
-    // results.push(result);
     setResults([
       ...results,
       result,
@@ -174,9 +225,10 @@ export default function QuizPage({ externalQuestions, externalBg }) {
   }
 
   React.useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setScreenState(screenStates.QUIZ);
     }, 1 * 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   function handleSubmitQuiz() {
@@ -190,6 +242,12 @@ export default function QuizPage({ externalQuestions, externalBg }) {
 
   return (
     <QuizBackground backgroundImage={externalBg}>
+      <Head>
+        <title>Tibia Quiz</title>
+        <meta property="og:title" content={db.title} />
+        <meta property="og:description" content={db.description} />
+        <meta property="og:image" content={db.bg} />
+      </Head>
       <QuizContainer>
         <QuizLogo />
 
@@ -202,6 +260,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
             addResult={addResult}
           />
         )}
+
         {screenState === 'LOADING' && <LoadingWidget />}
         {screenState === 'RESULT' && <ResultWidget results={results} />}
 

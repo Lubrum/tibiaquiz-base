@@ -1,40 +1,89 @@
 {
-    "bg": "https://wallpapercave.com/wp/wp7219204.jpg",
+    "bg": "https://wallpapercave.com/wp/wp7219232.jpg",
     "title": "Tibia Quiz",
     "description": "Teste os seus conhecimentos sobre o vasto universo de Tibia e divirta-se criando o seu AluraQuiz!",
     "questions": [{
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-            "title": "Como fazer um seletor por id via CSS?",
-            "description": "Essa é pra aquecer",
+            "image": "https://media.tenor.com/images/c282a029651724bddb7d06ffd30cdaf4/tenor.gif",
+            "title": "Qual a cidade mais antiga das alternativas abaixo?",
+            "description": "EasyPeasy",
             "answer": 2,
             "alternatives": [
-                ".elemento",
-                "*elemento",
-                "#elemento",
-                "%elemento"
+                "Issavi",
+                "Zao",
+                "Yalahar",
+                "Rathleon"
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Como fazer um background gradiente com css?",
-            "description": "Faz tempo em haha",
+            "image": "https://media.tenor.com/images/978a654755f64614217ebe72952b39e2/tenor.gif",
+            "title": "Qual criatura das abaixo fornece mais experiência?",
+            "description": "Hmm...",
             "answer": 0,
             "alternatives": [
-                "background: linear-gradient(#e66465, #9198e5);",
-                "background: gradient(#e66465, #9198e5);"
+                "hotworm",
+                "dog",
+                "rat",
+                "troll"
+            ]
+        },
+        {
+            "image": "https://media.tenor.com/images/cea27ed11b75dc73b9b39809dbd9f1c4/tenor.gif",
+            "title": "Qual o nome da magia de maior dano do sorcerer?",
+            "description": "...",
+            "answer": 3,
+            "alternatives": [
+                "exevo gran mas vis",
+                "utevo gran mas flam",
+                "exevo gran mas mort",
+                "exevo gran mas flam"
+            ]
+        },
+        {
+            "image": "https://media.tenor.com/images/ed71517a767ce583e81b72584212f3ec/tenor.gif",
+            "title": "Qual criatura das abaixo é imune a fogo?",
+            "description": "Oxe...",
+            "answer": 3,
+            "alternatives": [
+                "Banshee",
+                "Ghoul",
+                "Gaser Spectre",
+                "Frost Dragon"
+            ]
+        },
+        {
+            "image": "http://images.uncyc.org/pt/0/0f/Ferumbras.gif",
+            "title": "Qual criatura, antigamente encontrada nas florestas aos arredores de Port Hope, surgia e presentiava aventureiros afortunados com um item de addon chamado Mandrake?",
+            "description": "Barbada!",
+            "answer": 3,
+            "alternatives": [
+                "Ghorlam",
+                "Ferumbras",
+                "Bonelord",
+                "Tiquandas Revenge"
+            ]
+        },
+        {
+            "image": "https://media.tenor.com/images/c6224eea8d7fad3f83edd58d2ffe7439/tenor.gif",
+            "title": "Cidade free da lista.",
+            "description": "mumu!",
+            "answer": 3,
+            "alternatives": [
+                "Edron",
+                "Ankrahmun",
+                "Darashia",
+                "Kazordoon"
             ]
         }
     ],
     "external": [
         "https://aluraquiz-css.omariosouto.vercel.app/",
         "https://supernatural-quiz.pedro-murilo.vercel.app/",
-        "https://flash-quiz-next.davidlpc1.vercel.app/",
-        "https://hpquiz.lucianoweslen.dev/"
+        "https://flash-quiz-next.davidlpc1.vercel.app/"
     ],
     "theme": {
         "colors": {
-            "primary": "#8a1c1c",
-            "secondary": "#e66465",
+            "primary": "#474f97",
+            "secondary": "#121858",
             "mainBg": "#171B35",
             "secondaryBg": "#4A4E68",
             "contrastText": "#FFFFFF",
