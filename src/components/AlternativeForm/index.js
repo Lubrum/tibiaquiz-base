@@ -7,6 +7,11 @@ const AlternativesForm = styled.form`
       50% { background-color: ${({ theme }) => theme.colors.primary}; }
       100% { background-color: ${({ theme }) => theme.colors.wrong}; }
     }
+    @keyframes color-change-success {
+      0% { background-color: ${({ theme }) => theme.colors.success}; }
+      50% { background-color: ${({ theme }) => theme.colors.primary}; }
+      100% { background-color: ${({ theme }) => theme.colors.success}; }
+    }
     &[data-selected="true"] {
       background-color: ${({ theme }) => theme.colors.primary};
       

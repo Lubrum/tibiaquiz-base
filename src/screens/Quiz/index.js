@@ -13,8 +13,9 @@ import QuizContainer from '../../components/QuizContainer';
 import QuizLogo from '../../components/QuizLogo';
 import Button from '../../components/Button';
 import BackLinkArrow from '../../components/BackLinkArrow';
+import Icon from '../../components/Icon';
 
-const timeToChangePageMs = 500;
+const timeToChangePageMs = 3000;
 
 function ResultWidget({ results }) {
   const rightAnswers = results.filter((x) => x).length;
@@ -171,6 +172,9 @@ function QuestionWidget({
                 htmlFor={alternativeId}
                 data-selected={isSelected}
                 data-status={isQuestionSubmited && alternativeStatus}
+                style={{
+                  animation: alternativeIndex === question.answer && isQuestionSubmited && !isCorrect ? 'color-change-success 0.5s infinite' : '',
+                }}
               >
                 <input
                   style={{ display: 'none' }}
@@ -194,9 +198,24 @@ function QuestionWidget({
           >
             Confirmar
           </Button>
+          <br /><br />
+          { isQuestionSubmited && isCorrect
+          && (
+            <Icon
+              src="https://www.freeiconspng.com/uploads/ok-icon-success-19.png"
+              width="50"
+              alt="ok icon Success"
+            />
+          )}
 
-          { isQuestionSubmited && isCorrect && <p> Voce acertou </p> }
-          { isQuestionSubmited && !isCorrect && <p> Voce errou </p> }
+          { isQuestionSubmited && !isCorrect
+          && (
+            <Icon
+              src="https://www.freeiconspng.com/uploads/error-icon-4.png"
+              width="50"
+              alt="Free High quality Error Icon"
+            />
+          ) }
         </AlternativesForm>
       </Widget.Content>
     </Widget>
