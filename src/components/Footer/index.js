@@ -3,24 +3,30 @@ import styled from 'styled-components';
 
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
-p {
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
   background-color: #00000070;
   padding: 20px;
-  display: flex;
   align-items: center;
   border-radius: 4px; 
+  .text-alura {
+    grid-column: 2 / 3;
+    padding: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
   img {
     width: 58px;
     margin-right: 23px;
   }
-  a {
+  .link-alura {
+    grid-column: 1 / 2;
+    justify-self: center;
+    padding: 10px;
     color: white;
     text-decoration: none;
     transition: .3s;
@@ -38,10 +44,10 @@ export default function Footer(props) {
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
-      <a href="https://www.alura.com.br/">
+      <a className="link-alura" href="https://www.alura.com.br/">
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
       </a>
-      <p>
+      <p className="text-alura">
         Orgulhosamente criado durante
         {' '}
         a
