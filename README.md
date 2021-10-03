@@ -33,7 +33,7 @@ npx create-react-app front-web --template typescript --use-npm
 
 ```bash
 git clone https://github.com/ReneSena/quiz-cavaleiro-zodiaco.git ou git@github.com:ReneSena/quiz-cavaleiro-zodiaco.git
-npm dev
+npm run dev
 ```
 
 ## :eyeglasses: Demo em produção
