@@ -39,3 +39,5 @@ npm run dev
 ## :eyeglasses: Demo em produção
 
 [Link de acesso :dizzy:](https://tibiaquiz-base-lubrum.vercel.app/)
+
+;
