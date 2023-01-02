@@ -1,6 +1,6 @@
 # Projeto Alura Quiz
 
-Este é o código frontend do Tibia Quiz, um Quiz sobre o jogo [tibia](https://www.tibia.com/news/?subtopic=latestnews). 
+Este é o código frontend do Tibia Quiz, um Quiz sobre o jogo [tibia](https://www.tibia.com/news/?subtopic=latestnews).  
 
 O projeto foi uma proposta da Alura, o tema foi para livre escolha dos ouvintes da imersão, com espaço em aberto para modificações e melhorias.
 
