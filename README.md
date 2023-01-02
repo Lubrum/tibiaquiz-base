@@ -2,7 +2,7 @@
 
 Este é o código frontend do Tibia Quiz, um Quiz sobre o jogo [tibia](https://www.tibia.com/news/?subtopic=latestnews). 
 
-O projeto foi uma proposta da Alura, o tema foi para livre escolha dos ouvintes da imersão, com espaço em aberto para modificações e melhorias.
+O projeto foi uma proposta da Alura, o tema foi para livre escolha dos ouvintes da imersão, com espaço em aberto para modificações e melhorias. 
 
 ## :hammer_and_wrench: Ferramentas
 
