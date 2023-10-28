@@ -49,7 +49,7 @@ export default function Home() {
 
             <p>{db.description}</p>
 
-            <form onSubmit={function (infosDoEvento) {
+            <form onSubmit={function infoDoEvento(infosDoEvento) {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
             }}

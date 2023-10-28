@@ -5,6 +5,8 @@
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import db from '../../../db.json';
 import AlternativesForm from '../../components/AlternativeForm';
 import Widget from '../../components/Widget';
@@ -29,7 +31,7 @@ function ResultWidget({ results }) {
         <p style={{ fontSize: '20px' }}>Resultados</p>
       </Widget.Header>
 
-      <img
+      <Image
         alt="Imagem do Loading"
         style={{
           width: '100%',
@@ -63,7 +65,7 @@ function ResultWidget({ results }) {
             </li>
           ))}
         </ul>
-        <a href="/">Tentar novamente...</a>
+        <Link href="/">Tentar novamente...</Link>
       </Widget.Content>
 
     </Widget>
@@ -78,7 +80,7 @@ function LoadingWidget() {
       </Widget.Header>
 
       <Widget.Content style={{ padding: '0px' }}>
-        <img
+        <Image
           alt="Imagem do Loading"
           style={{
             width: '100%',
@@ -130,7 +132,7 @@ function QuestionWidget({
         </h3>
       </Widget.Header>
 
-      <img
+      <Image
         alt="Descrição"
         style={{
           width: '100%',

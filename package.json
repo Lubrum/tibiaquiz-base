@@ -1,6 +1,6 @@
 {
   "name": "with-styled-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "framer-motion": "^9.0.1",
-    "next": "13.1.6",
+    "framer-motion": "^10.16.4",
+    "next": "14.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.0",
+    "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.1.6",

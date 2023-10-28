@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
+import Image from 'next/image';
 
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
@@ -45,7 +46,7 @@ export default function Footer(props) {
     // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
       <a className="link-alura" href="https://www.alura.com.br/">
-        <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
+        <Image src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
       </a>
       <p className="text-alura">
         Orgulhosamente criado durante
