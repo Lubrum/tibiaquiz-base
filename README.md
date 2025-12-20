@@ -56,4 +56,4 @@ npm start
 
 ## :eyeglasses: Demo em produção
 
-[Link de acesso :dizzy:](https://tibiaquiz-base-lubrum.vercel.app/)
+[Link de acesso :dizzy:](https://tibiaquiz-base.vercel.app/)
