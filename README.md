@@ -16,6 +16,10 @@ Foram 5 aulas do dia 25 ao 29, apresentando conceitos do React e Nextjs, como os
 
 Sendo assim a ideia é construir um app de perguntas e respostas, o famigerado Quiz. O tema do projeto é livre, decidi fazer um quiz sobre o tibia, jogo de MMORPG europeu criado em 1997 pela Cipsoft.
 
+## Preview
+
+![Preview](docs/preview.png)
+
 ## :hammer_and_wrench: Ferramentas
 
 -   [Nextjs](https://nextjs.org/)
