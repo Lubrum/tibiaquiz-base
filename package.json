@@ -7,27 +7,37 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "eslint:init": "eslint --init",
-    "lint": "eslint ./ --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "framer-motion": "^10.16.4",
+    "bootstrap": "^5.3.8",
+    "framer-motion": "^12.40.0",
     "next": "^16.2.6",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.9.1",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.1.0"
+    "react": "^19.2.6",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.6",
+    "styled-components": "^6.4.2"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.1.6",
-    "babel-plugin-styled-components": "^2.0.7",
-    "eslint": "^8.33.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "@next/eslint-plugin-next": "^16.2.6",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.6",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1"
+  },
+  "overrides": {
+    "micromatch": {
+      "picomatch": "^2.3.2"
+    },
+    "minimatch@3.1.5": {
+      "brace-expansion": "^1.1.14"
+    },
+    "next": {
+      "postcss": "^8.5.15"
+    }
   }
 }
