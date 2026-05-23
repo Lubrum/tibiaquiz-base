@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 const Wrapper = styled.div`
   position: absolute;
   top: 0;
@@ -8,7 +7,6 @@ const Wrapper = styled.div`
   right: 0;
   z-index: 20;
 `;
-
 const SVGWrapper = styled.svg`
   fill: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.contrastText};
@@ -30,8 +28,6 @@ const SVGWrapper = styled.svg`
     }
   }
 `;
-
-// eslint-disable-next-line react/prop-types
 export default function GitHubCorner({ projectUrl }) {
   return (
     <Wrapper>

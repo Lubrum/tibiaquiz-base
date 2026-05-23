@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import QuizScreen from '../../src/screens/Quiz';
-
 export default function QuizDaGaleraPage({ dbExterno }) {
   return (
     <ThemeProvider theme={dbExterno.theme}>
@@ -13,8 +11,6 @@ export default function QuizDaGaleraPage({ dbExterno }) {
     </ThemeProvider>
   );
 }
-
-// eslint-disable-next-line no-unused-vars
 export async function getServerSideProps(context) {
   try {
     const [projectName, githubUser] = context.query.id.split('___');

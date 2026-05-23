@@ -8,7 +8,7 @@ const QuizBackground = styled.div`
     height: 0;
     background-size: cover;
     background-position: center;
-    background-image: url(${({ backgroundImage }) => backgroundImage});
+    background-image: url(${({ $backgroundImage }) => $backgroundImage});
     background-color: ${({ theme }) => theme.colors.mainBg};
     flex: 1;
     *:first-child {
@@ -23,7 +23,7 @@ const QuizBackground = styled.div`
     height: 0;
     background-size: cover;
     background-position: center;
-    background-image: url(${({ backgroundImage }) => backgroundImage});
+    background-image: url(${({ $backgroundImage }) => $backgroundImage});
     background-color: ${({ theme }) => theme.colors.mainBg};
     flex: 1;
     *:first-child {

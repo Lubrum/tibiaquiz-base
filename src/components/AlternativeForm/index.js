@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 const AlternativesForm = styled.form`
   label {
     @keyframes color-change-warning {
@@ -14,7 +13,6 @@ const AlternativesForm = styled.form`
     }
     &[data-selected="true"] {
       background-color: ${({ theme }) => theme.colors.primary};
-      
       &[data-status="SUCCESS"] {
         background-color: ${({ theme }) => theme.colors.success};
       }
@@ -30,5 +28,4 @@ const AlternativesForm = styled.form`
     margin-top: 24px;
   }
 `;
-
 export default AlternativesForm;
