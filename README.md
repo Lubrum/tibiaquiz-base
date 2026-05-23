@@ -3,9 +3,9 @@
 	<h1>Quiz</h1>
 </div>
 
-![Badge](https://img.shields.io/badge/React-v16.18.0-%233570B2?style=for-the-badge&logo=appveyor)
-![Badge](https://img.shields.io/badge/Node-v16.17.0-%2300B98E?style=for-the-badge&logo=appveyor)
-![Badge](https://img.shields.io/badge/Npm-v9.4.1-%2300B98E?style=for-the-badge&logo=appveyor)
+![Badge](https://img.shields.io/badge/React-v19.2.6-%233570B2?style=for-the-badge&logo=appveyor)
+![Badge](https://img.shields.io/badge/Node-v24.16.0_LTS-%2300B98E?style=for-the-badge&logo=appveyor)
+![Badge](https://img.shields.io/badge/Npm-v11.15.0-%2300B98E?style=for-the-badge&logo=appveyor)
 [![Vercel Status](https://img.shields.io/badge/vercel-deployed-black?logo=vercel)](https://tibiaquiz-base.vercel.app/)
 
 ## :dart: Objetivo
@@ -55,6 +55,12 @@ npm install
 ```
 ➡️ **Iniciando o projeto**
 ```bash
+npm run dev
+```
+
+➡️ **Build de produção**
+```bash
+npm run build
 npm start
 ```
 
