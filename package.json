@@ -13,7 +13,7 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "framer-motion": "^12.40.0",
-    "next": "^16.2.6",
+    "next": "^16.2.11",
     "prop-types": "^15.8.1",
     "react": "^19.2.6",
     "react-bootstrap": "^2.10.10",
